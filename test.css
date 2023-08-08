@@ -1,0 +1,116 @@
+.logo{
+    width: 150px;
+    height: 150px;
+
+}
+
+body{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul{
+    align-items: stretch;
+    font-weight: bold;
+}
+
+.myFirstSection, .mySecondSection, .myThirdSection, .myFourthSection,
+.myFifthSection, .mySixthSection{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 50px;
+}
+
+#div{
+    display: none;
+}
+
+
+.item{
+    display: inline;
+}
+
+.paragraph{
+    float: left;
+    width: 50%;
+    margin-top: 50px;
+  }
+
+
+.modal {
+        display: none; /* La modal est cachée par défaut */
+        position: fixed; /* Position fixe pour la modal */
+        z-index: 1; /* La modal doit être au-dessus de tout le reste */
+        left: 0;
+        top: 0;
+        width: 100%; /* Largeur de la modal */
+        height: 100%; /* Hauteur de la modal */
+        overflow: auto; /* Pour permettre le défilement de la modal */
+        background-color: rgb(0,0,0); /* Fond noir */
+        background-color: rgba(0,0,0,0.4); /* Fond noir semi-transparent */
+      }
+          
+.modal-content {
+        background-color: #fefefe; /* Fond blanc pour le contenu de la modal */
+        margin: 15% auto; /* Centrer la modal verticalement et horizontalement */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Largeur du contenu de la modal */
+      }
+      
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }      
+
+img{
+    width: 250px;
+    height:auto;
+    display:block;
+    margin: 0 auto;
+    padding: 0;
+    border: none;
+    position: static;
+}
+
+.imgModal {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+.container{
+    display:flex;
+}
+
+.equipements, .myTable {
+    flex: 1;
+  }
+
+
+
+.label{
+    font-weight: bold;
+    padding-right: 10px;
+  }
+
+  #carousel {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  #carousel img{
+    display: none;
+    width: 500px;
+    height: 300px;
+  }

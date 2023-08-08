@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+
+ <!--Véhicule 1-->
+ <div class="card" style="width: 18rem;" id="card1">
+    <img class="card-img-top" src="../photos-vehicules/peugeot2008/peugeot2008-1.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">PEUGEOT 2008 ALLURE PACK 1.2 136CH ELECTRIQUE </h5>
+        <p class="card-text">Année : 2021 <br>Electrique <br> 9557 km <hr> Prix : 25400 €</p>
+      <button onclick="openModal()">Détails</button> 
+      </div>
+      </div>
+
+<!-- Modal Informations véhicule 1 -->
+<div id="myModal" class="modal">
+
+<div class="modal-content">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <div id="carousel" >
+    <img src="../photos-vehicules/peugeot2008/peugeot2008-1.jpg">
+    <img src="../photos-vehicules/peugeot2008/peugeot2008-2.jpg">
+    <img src="../photos-vehicules/peugeot2008/peugeot2008-3.jpg">
+    <img src="../photos-vehicules/peugeot2008/peugeot2008-4.jpg">
+    <button id="prev">Précédent</button>
+    <button id="next">Suivant</button>
+  </div>
+  
+  <br><br>
+  <div class="container">
+  <div class="equipements">
+      <h3>Equipements :</h3>
+  <ul>
+    <li>Guidage pour manoeuvre de stationnement</li>
+    <li>Rétroviseur intérieur électrochrome</li>
+    <li>Ecran tactile</li>
+    <li>Caméra de recul</li>
+    <li>Kit mains-libres Bluetooth</li>
+    <li>6 Haut parleurs</li>
+    <li>Vitres arrière teintées</li>
+    <li>Clim automatique</li>
+    <li>Fixations Isofix aux places arrières</li>
+  </ul>
+  
+  <h3>CONDUITE :</h3>
+  <ul>
+    <li>Aide au démarrage en côte</li>
+    <li>Allumage des phares automatique</li>
+    <li>Capteur de pluie</li>
+    <li>Contrôle Dynamique de la Stabilité</li>
+    <li>Démarrage sans clé</li>
+    <li>Follow me home</li>
+    <li>Guidage pour manoeuvre de stationnement</li>
+    <li>Indicateur de limitation de vitesse</li>
+    <li>Limiteur de vitesse</li>
+  </ul>  
+  </div>
+
+  <div class="myTable">
+    <table>
+      <tbody>
+        <tr>
+          <td class="label">Nom du moteur:</td>
+          <td>Electrique</td>
+        </tr>
+        <tr>
+          <td class="label">Energie:</td>
+          <td>Electrique</td>
+        </tr>
+        <tr>
+          <td class="label">Puissance réelle maxi:</td>
+          <td>136 ch / 100 kW</td>
+        </tr>
+        <tr>
+          <td class="label">Transmission:</td>
+          <td>Automatique</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+  </div>
+
+  
+</div>
+</div>
+
+
+<!--Véhicule 2-->
+<div class="card" style="width: 18rem;" id="card2">
+  <img class="card-img-top" src="../photos-vehicules/peugeot208/peugeot208.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Peugeot 208 ALLURE PACK 1.2 100CH ESSENCE <br><br><br></h5>
+    <p class="card-text">Année : 2021 <br> Essence <br> 25000 km<hr>Prix : 15000 €</p>
+    <button onclick="openSecondModal()">Détails</button> 
+  </div>
+</div>
+
+<!-- Modal informations véhicule 2-->
+<div id="mySecondModal" class="modal">
+
+  <div class="modal-content">
+    <span class="close" onclick="closeSecondModal()">&times;</span>
+    <div id="secondCarousel">
+      <img src="../photos-vehicules/peugeot208/peugeot208.jpg">
+      <img src="../photos-vehicules/peugeot208/peugeo208-2.jpg">
+      <img src="../photos-vehicules/peugeot208/peugeot208-3.jpg">
+      <img src="../photos-vehicules/peugeot208/peugeot208-4.jpg">
+      <button id="prev">Précédent</button>
+      <button id="next">Suivant</button>
+    </div>
+    
+    <br><br>
+    <div class="container">
+    <div class="equipements">
+        <h3>Equipements :</h3>
+    <ul>
+      <li>6 Haut parleurs</li>
+      <li>Appel d'Assistance Localisé</li>
+      <li>Appel d'Urgence Localisé</li>
+      <li>Commandes du système audio au volant</li>
+      <li>Ecran tactile</li>
+      <li>Interface Media</li>
+      <li>Kit mains-libres Bluetooth</li>
+      <li>Prise USB</li>
+      <li>Radio numérique DAB</li>
+    </ul>
+    
+    <h3>CONDUITE :</h3>
+    <ul>
+      <li>Affichage tête haute</li>
+      <li>Aide au démarrage en côte</li>
+      <li>Allumage des phares automatique</li>
+      <li>Arrêt et redémarrage auto. du moteur</li>
+      <li>Capteur de pluie</li>
+      <li>Démarrage sans clé</li>
+      <li>Frein stationnement électrique</li>
+      <li>Guidage pour manoeuvre de stationnement</li>
+      <li>Régulateur de vitesse</li>
+    </ul>  
+    </div>
+
+    <div class="myThirdTable">
+      <table>
+        <tbody>
+          <tr>
+            <td class="label">Nom du moteur:</td>
+            <td>1.2 e-THP</td>
+          </tr>
+          <tr>
+            <td class="label">Energie:</td>
+            <td> Essence</td>
+          </tr>
+          <tr>
+            <td class="label">Puissance réelle maxi:</td>
+            <td>maxi102 ch / 75 kW</td>
+          </tr>
+          <tr>
+            <td class="label">Transmission:</td>
+            <td>manuelle</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+    </div>
+
+    
+  </div>
+</div>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="test.js"></script>
+</body>
+</html>
