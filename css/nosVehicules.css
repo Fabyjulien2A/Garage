@@ -1,0 +1,138 @@
+/*Code css de la page nosVehicules.php*/
+
+body{
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  background-color: whitesmoke;
+}
+
+.logo{
+  width: 150px;
+  height: 150px;
+
+}
+
+.nav-item:hover .nav-link {
+  color: red; 
+}
+
+
+ul{
+  align-items: stretch;
+  font-weight: bold;
+}
+
+
+img {
+  width: 80%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+
+
+
+.carte h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.carte p {
+    font-size: 14px;
+}
+
+
+
+#cartes-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px;
+    place-items: center;
+
+
+}
+
+.carte {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+}
+
+
+.modal-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    max-height: 80vh; 
+    overflow-y: auto; 
+  
+}
+  
+.close {
+    color: #aaaaaa;
+    float: left;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+  
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+.item {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.copyright{
+  text-align: center;
+  padding: 10px 0;
+  color: black;
+  font-size: 14px;
+}
+
+
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+  .cartes-container {
+    width: 100%;
+  }
+
+  .footer{
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .cartes-container {
+    width: 100%;
+  }
+
+  
+  .footer{
+    width: 100%;
+  }
+
+
+}
