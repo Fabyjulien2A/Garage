@@ -3,7 +3,6 @@
     $dsn = 'mysql:host=mysql-fabyjulien.alwaysdata.net;dbname=fabyjulien_ecf_garage';
     $username = '319891_faby';
     $password = 'alwaysdatastudi';
-    $appKey = getenv('APP_KEY');
 
     try {
         $connexion = new PDO($dsn, $username, $password);
