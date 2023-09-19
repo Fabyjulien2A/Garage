@@ -34,8 +34,8 @@ if (!$_SESSION['mdp']){
                     <div class="form-group">
                         <label for="etat">État du garage :</label>
                         <select class="form-control" name="etat" id="etat">
-                            <option value="ouvert">Ouvert</option>
-                            <option value="ferme">Fermé</option>
+                            <option value="Ouvert">Ouvert</option>
+                            <option value="Fermé">Fermé</option>
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Mettre à jour</button>
