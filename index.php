@@ -11,6 +11,5 @@
     ?>
 
    
-    <p>Autre contenu de la page d'accueil.</p>
 </body>
 </html>
