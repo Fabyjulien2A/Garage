@@ -46,7 +46,7 @@ if (isset($_POST['envoi'])){
 <body>
     <div class="container-fluid text-center">
         <h1 class="mt-5">Inscription utilisateur</h1>
-        <form method="post" action="inscriptionEmployes.php" class="mt-4">
+        <form method="post" action="inscriptions.php" class="mt-4">
             <div class="mb-3">
                 <label for="name" class="form-label">Nom :</label>
                 <input type="text" class="form-control" name="nom" id="name">
