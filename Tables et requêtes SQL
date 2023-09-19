@@ -1,0 +1,404 @@
+
+create table avis_clients
+(
+    id          int auto_increment
+        primary key,
+    nom         varchar(255) not null,
+    commentaire varchar(255) not null,
+    note        int          not null,
+    user_id     int          null,
+    constraint avis_clients_ibfk_1
+        foreign key (user_id) references users (id)
+);
+
+create index user_id
+    on avis_clients (user_id);
+
+Requêtes SQL :
+
+INSERT INTO avis_clients (nom, commentaire, note, user_id)
+VALUES ('Dupond Jean', 'Parfait, le personnel est à l''écoute et très professionnel', 10, NULL);
+
+
+INSERT INTO avis_clients (nom, commentaire, note, user_id)
+VALUES ('Belal Karim', 'Belle surprise, je recommande', 10, NULL);
+
+INSERT INTO avis_clients (nom, commentaire, note, user_id)
+VALUES ('Piguet Virgnie', 'Accueil chaleureux et personnel à l''écoute .', 10, NULL);
+
+
+
+
+create table users
+(
+    id     int auto_increment
+        primary key,
+    nom    varchar(255) not null,
+    prenom varchar(255) not null,
+    poste  varchar(255) not null,
+    email  varchar(255) not null,
+    mdp    varchar(255) not null,
+    role   varchar(255) not null,
+    statut varchar(255) not null,
+    constraint email_unique
+        unique (email)
+);
+
+
+create table demandes_informations
+(
+    nom       varchar(50)  null,
+    prenom    varchar(50)  null,
+    email     varchar(100) null,
+    telephone varchar(20)  null,
+    message   text         null,
+    ID        int auto_increment
+        primary key
+);
+
+create table demandes_sav
+(
+    nom       varchar(50)  null,
+    prenom    varchar(50)  null,
+    email     varchar(100) null,
+    telephone varchar(20)  null,
+    message   text         null,
+    ID        int auto_increment
+        primary key
+);
+
+create table garage
+(
+    id   int auto_increment
+        primary key,
+    etat varchar(255) not null
+);
+
+create table services_reparations
+(
+    id  int auto_increment
+        primary key,
+    nom varchar(255) null
+);
+
+create table tickets_support
+(
+    ID        int auto_increment
+        primary key,
+    nom       varchar(50)  null,
+    prenom    varchar(50)  null,
+    email     varchar(100) null,
+    telephone varchar(20)  null,
+    message   text         null
+);
+
+
+
+CREATE TABLE vehicules
+(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    modele VARCHAR(50) NOT NULL,
+    kilometrage INT NOT NULL,
+    annee INT NOT NULL,
+    prix FLOAT,
+    photos VARCHAR(500),
+    equipements TEXT,
+    equipements_conduite TEXT,
+    nom_du_moteur VARCHAR(50),
+    energie VARCHAR(50),
+    puissance VARCHAR(50),
+    transmission VARCHAR(255),
+    photos_galerie VARCHAR(500)
+);
+Requêtes SQL :
+
+INSERT INTO vehicules (modele, kilometrage, annee, prix, photos, equipements, equipements_conduite, nom_du_moteur, energie, puissance, transmission, photos_galerie)
+VALUES ('Peugeot 2008 ', 9557, 2021, 25400, 'photos-vehicules/peugeot2008-1.jpg', 'Guidage pour manoeuvre de stationnement, Rétroviseur intérieur électrochrome, Ecran tactile Caméra de recul, kit mains-libres Bluetooth, 6 Haut parleurs Vitres arrière teintées Clim automatique', 'Aide au démarrage en côte, Allumage des phares automatique, Capteur de pluie, Contrôle Dynamique de la Stabilité, Démarrage sans clé, Follow me home, Guidage pour manoeuvre de stationnement, Indicateur de limitation de vitesse, Limiteur de vitesse', '1.2 e-THP','Essence', '102 ch / 75 kW', 'Automatique',
+        'photos-vehicules/peugeot2008-2.jpg photos-vehicules/peugeot2008-3.jpg photos-vehicules/peugeot2008-4.jpg');
+
+INSERT INTO vehicules (modele, kilometrage, annee, prix, photos, equipements, equipements_conduite, nom_du_moteur, energie, puissance, transmission, photos_galerie)
+VALUES ('Peugeot 208', 25000, 2021, 15000, 'photos-vehicules/peugeot208.jpg', '6 Haut parleurs, Appel d''Assistance Localisé, Appel d''Urgence Localisé, Commandes du système audio au volant, Ecran tactile, Interface Media, Kit mains-libres Bluetooth, Prise USB,  Radio numérique DAB","Affichage tête haute,',    'Aide au démarrage en côte, Allumage des phares automatique, Arrêt et redémarrage auto. du moteur, Capteur de pluie, Démarrage sans clé, Frein stationnement électrique, Guidage pour manoeuvre de stationnement, Régulateur de vitesse',
+        '1.2 e-THP',
+        'Essence',
+        '102 ch / 75 kW',
+        'Manuelle',
+        'photos-vehicules/peugeo208-2.jpg' 'photos-vehicules/peugeot208-3.jpg' 'photos-vehicules/peugeot208-4.jpg');
+
+
+
+INSERT INTO vehicules (modele, kilometrage, annee, prix, photos, equipements, equipements_conduite, nom_du_moteur, energie, puissance, transmission, photos_galerie)
+VALUES
+    ('Peugeot 3008', 34810, 2022, 31990, 'photos-vehicules/peugeot3008-1.jpg', 'Kit mains-libres Bluetooth, Radio numérique DAB ,GPS Cartographique , Interface Media, Ecran tactile,Commandes du système audio au volant, Commandes vocales, Prise USB, Fonction MP3
+', 'Système d''accès sans clé, Frein stationnement électrique, Aide au démarrage en côte, Régulateur de vitesse, Follow me home, Limiteur de vitesse, Guidage pour manoeuvre de stationnement, Allumage des phares automatique, Capteur de pluie
+', '1.5 BlueHDi130', 'Diesel', '131 ch / 96 kW', 'Automatique', 'photos-vehicules/peugeot3008-2.jpg  photos-vehicules/peugeot3008-3.jpg  photos-vehicules/peugeot3008-4.jpg'),
+
+ ('Volkswagen Polo', 8889, 2021, 20000, 'photos-vehicules/polo-1.jpg
+', 'Kit mains-libres Bluetooth, Commandes du système audio au volant, Kit mains-libres Bluetooth, 6 Haut parleurs, Lecteur carte SD, Prise USB, Prise iPod, Fonction MP3, Radio',
+  'Aide au démarrage en côte, Capteur de luminositée, Follow me home, Régulateur de vitesse, Limiteur de vitesse, Arrêt et redémarrage auto. du moteur, Guidage pour manoeuvre de stationnement, Allumage des phares automatique,Capteur de pluie
+', '1.0 TSI 95', 'Essence', '95 ch / 70 kW', 'Manuelle', 'photos-vehicules/polo-2.jpg  photos-vehicules/polo-3.jpg  photos-vehicules/polo-4.jpg
+'),
+
+
+
+('Volkswagen Golf', 29886, 2021, 25000, 'photos-vehicules/golf-1.jpg', '7 Haut parleurs, Commandes vocales, Ecran tactile, Fonction MP3, GPS Cartographique, Interface Media, Kit mains-libres Bluetooth, Radio numérique DAB, Prise USB', 'Aide au démarrage en côte, Arrêt et redémarrage auto. du moteur, Blocage électronique du différentiel, Capteur de pluie, Capteur de luminosité, Différentiel autobloquant, Démarrage sans clé, Limiteur de vitesse, Régulateur de vitesse adaptatif
+', '1.0 TSI 110', 'Essence', '110 ch / 81 kW', 'Manuelle', 'photos-vehicules/golf-2.jpg  photos-vehicules/golf-3.jpg  photos-vehicules/golf-4.jpg
+');
+
+
+
+INSERT INTO vehicules (modele, kilometrage, annee, prix, photos, equipements, equipements_conduite, nom_du_moteur, energie, puissance, transmission, photos_galerie)
+VALUES
+    ('Volkswagen Aerton',
+     2022,
+     2020,
+     25500,
+     'photos-vehicules/arteon-1.jpg',
+     'Commandes du système audio au volant, Pré-équipement Kit Bluetooth, Disque dur multimédia, Lecteur carte SD, Services connectés, Radio numérique DAB, Commandes vocale, Pré-équipement Radio, 8 Haut parleurs',
+     'Arrêt et redémarrage auto. du moteur, Frein stationnement électromécanique, Palettes changement vitesses au volant, Régulateur de vitesse adaptatif, Syst. intelligent gestion des cylindres, Système de maintien du véhicule en côte, Capteur de luminosité',
+     '2.0 TSI 190',
+     'Essence',
+     '190 ch / 140 kW',
+     'Manuelle',
+     'photos-vehicules/arteon2.jpg  photos-vehicules/arteon-3.jpg  photos-vehicules/arteon-4.jpg'),
+
+
+    ('Volkswagen Procab',
+     18500,
+     2022,
+     22000,
+     'photos-vehicules/procab-1.jpg',
+     'Kit mains-libres Bluetooth, Prise auxiliaire de connexion audio, Volume automatique de la radio, 2 Haut parleurs, Ecran tactile, Fonction MP3, Lecteur CD, Prise USB, Radio',
+     ' Régulateur de vitesse, Système de maintien du véhicule en côte, Capteur de luminosité, Démarrage sans clé, Capteur de pluie',
+     '2.0 TDI 150',
+     'Diesel',
+     '150 ch / 110 kW',
+     'Manuelle',
+     'photos-vehicules/procab-2.jpg  photos-vehicules/procab-3.jpg  photos-vehicules/procab.4.jpg'),
+
+
+    ('Volkswagen ID-5',
+     10000,
+     2022,
+     38290,
+     'photos-vehicules/id-5-1.jpg',
+     '7 Haut parleurs, Appel d''Urgence Localisé, Commandes du système audio au volant, Commandes vocales, Ecran tactile, Fonction MP3, Kit mains-libres Bluetooth, Prise USB, Services connectés ',
+     'Capteur de luminosité, Capteur de pluie, Commande Mode ECO, Démarrage sans clé, Indicateur de limitation de vitesse, Régulateur de vitesse adaptatif, Régulateur de vitesse et de distance, Limiteur de vitesse',
+     'Moteur 3',
+     'Electrique',
+     '174 ch / 128 kW',
+     'Automatique',
+     'photos-vehicules/id-5-2.jpg  photos-vehicules/id-5-3.jpg  photos-vehicules/id-5-4.jpg'),
+
+
+
+    ('Ford Fiesta',
+     62580,
+     2017,
+     10990,
+     'photos-vehicules/ford-fiesta-1.jpg,',
+     '7 Haut parleurs, Ecran tactile, Interface Media, Kit mains-libres Bluetooth, Services connectés, Prise USB, Radio, Régulateur de vitesse, Limiteur de vitesse',
+     ' Régulateur de vitesse et de distance, Limiteur de vitesse',
+     '1.1',
+     'Essence',
+     '85 ch / 63 kW',
+     'Manuelle',
+     'photos-vehicules/ford-fiesta-2.jpg  photos-vehicules/ford-fiesta-3.jpg  photos-vehicules/ford-fiesta-4.jpg'),
+
+
+    ('Ford Kuga',
+     20000,
+     2020,
+     25000,
+     'photos-vehicules/ford-kuga-1.jpg',
+     '6 Haut parleurs, Commandes vocales, Ecran tactile, GPS Cartographique, Interface Media, Kit mains-libres Bluetooth, Prise USB, Prise auxiliaire de connexion audio, Radio numérique DAB',
+     'Aide au démarrage en côte, Capteur de luminosité, Capteur de pluie, Suspensions Sport, Démarrage sans clé, Indicateur de limitation de vitesse, Régulateur de vitesse adaptatif, Régulateur de vitesse et de distance, Limiteur de vitesse',
+     '2.5 Duratec 190',
+     'Hybride',
+     '152 ch / 112 kW',
+     'Automatique',
+     'photos-vehicules/ford-kuga-2.jpg  photos-vehicules/ford-kuga-3.jpg  photos-vehicules/ford-kuga-4.jpg'),
+
+
+
+    ('Ford Focus',
+     68753,
+     2018,
+     13990,
+     'photos-vehicules/focus-1.jpg',
+     '4 Haut parleurs, Borne Wi-Fi, Commandes vocales, Ecran tactile, GPS Cartographique, Kit mains-libres Bluetooth, Prise USB, Prise auxiliaire de connexion audio, Radio',
+     ' Régulateur de vitesse adaptatif, Régulateur de vitesse et de distance, Limiteur de vitesse',
+     '1.0 EcoB 125',
+     'Essence',
+     '125 ch / 92 kW',
+     'Manuelle',
+     'photos-vehicules/focus-2.jpg  photos-vehicules/focus-3.jpg  photos-vehicules/focus-4.jpg'),
+
+
+    ('Ford Puma',
+     70500,
+     2021,
+     18390,
+     'photos-vehicules/puma-1.jpgg',
+     '10 Haut parleurs, Appel d''Urgence Localisé, Commandes vocales, Ecran tactile, GPS Cartographique, Kit mains-libres Bluetooth, Prise USB, Prise auxiliaire de connexion audio, Radio',
+     'Aide au démarrage en côte, Capteur de luminosité, Capteur de pluie, Commande du comportement dynamique, Démarrage sans clé, Indicateur de limitation de vitesse, Régulateur de vitesse adaptatif, Régulateur de vitesse et de distance, Limiteur de vitesse',
+     '1.0 EcoB 125',
+     'Essence',
+     '125 ch / 93 kW',
+     'Manuelle',
+     'photos-vehicules/puma-2.jpg  photos-vehicules/puma-3.jpg  photos-vehicules/puma-4.jpg'),
+
+
+
+
+    ('Ford Ranger',
+     25000,
+     2022,
+     35000,
+     'photos-vehicules/ranger-1.jpg',
+     'Commandes du système audio au volant, Prise auxiliaire de connexion audio, 6 Haut parleurs, Kit mains-libres Bluetooth, Commandes vocales, Ecran tactile, Prise USB, Interface Media, Radio',
+     'Aide au démarrage en côte, Allumage des phares automatique, Arrêt et redémarrage auto. du moteur, Blocage électronique du différentiel, Capteur de luminosité, Capteur de pluie, Limiteur de vitesse, Régulateur de vitesse, Système d''assistance à la descente',
+     '2.0 TDCi 213',
+     'Diesel',
+     '214 ch / 157 kW',
+     'Automatique',
+     'photos-vehicules/ranger-2.jpg  photos-vehicules/ranger-3.jpg  photos-vehicules/ranger-4.jpg')
+;
+
+
+INSERT INTO vehicules (modele, kilometrage, annee, prix, photos, equipements, equipements_conduite, nom_du_moteur, energie, puissance, transmission, photos_galerie)
+VALUES
+    ('Bmw serie 3',
+     29586,
+     2021,
+     29000,
+     'photos-vehicules/serie3-1.jpg',
+     '6 Haut parleurs, Appel d''Urgence Localisé, Commandes vocales, Ecran tactile, Fonction MP3, GPS Cartographique, Interface Media, Kit mains-libres Bluetooth, Services connectés',
+     'Arrêt et redémarrage auto. du moteur, Capteur de pluie, Capteur de luminosité, Démarrage sans clé, Follow me home, Limiteur de vitesse, Mode de conduite, Régulateur de vitesse adaptatif, Système d''assistance à la descente',
+     '2.0 d 190',
+     'Diesel',
+     '190 ch / 140 kW',
+     'Manuelle',
+     'photos-vehicules/serie3.2.jpg  photos-vehicules/serie3-3.jpg  photos-vehicules/serie3-4.jpg'),
+
+
+    ('Bmw X2',
+     30000,
+     2020,
+     30000,
+     'photos-vehicules/bmw-1.jpg',
+     '6 Haut parleurs, Appel d''Urgence Localisé, Commandes du système audio au volant, Fonction MP3, Kit mains-libres Bluetooth, Prise USB, Radio numérique DAB, Services connectés, Radio',
+     'Arrêt et redémarrage auto. du moteur, Capteur de pluie, Capteur de luminosité, Démarrage sans clé, Follow me home, Limiteur de vitesse, Mode de conduite, Régulateur de vitesse adaptatif,Commande du comportement dynamique',
+     '1.5i ',
+     'Essence',
+     '136 ch / 100 kW',
+     'Manuelle',
+     'photos-vehicules/x2-2.jpg  photos-vehicules/x2-3.jpg  photos-vehicules/x2-4.jpg'),
+
+
+    ('Citroen c-3',
+     30000,
+     2020,
+     18000,
+     'photos-vehicules/c3-1.jpg',
+     '6 Haut parleurs, Appel d''Urgence Localisé, Commandes du système audio au volant, Commandes vocales, Ecran tactile, Fonction MP3, GPS Cartographique, Kit mains-libres Bluetooth, Services connectés',
+     'Arrêt et redémarrage auto. du moteur, Allumage des phares automatique, Aide au démarrage en côte, Démarrage sans clé, Follow me home, Limiteur de vitesse, Mode de conduite, Régulateur de vitesse adaptatif, Commande du comportement dynamique',
+     '1.2 e-THP',
+     'Essence',
+     '131 ch / 96 kW',
+     'Automatique',
+     'photos-vehicules/c3-2.jpg  photos-vehicules/c3-3.jpg  photos-vehicules/c3-4.jpg'),
+
+    ('Citroen c-4',
+     19300,
+     2020,
+     25000,
+     'photos-vehicules/c4-1.jpg',
+     '6 Haut parleurs, Appel d''Urgence Localisé, Appel d''Assistance Localisé, Commandes du système audio au volant, Ecran tactile, Fonction MP3, Prise USB, Kit mains-libres Bluetooth, Interface Media',
+     'Aide au démarrage en côte, Allumage des phares automatique, Arrêt et redémarrage auto. du moteur, Capteur de pluie, Follow me home, Limiteur de vitesse, Mode de conduite, Régulateur de vitesse adaptatif, Commande du comportement dynamique',
+     '1.5 BlueHDi130',
+     'Diesel',
+     '131 ch / 96 kW',
+     'Automatique',
+     'photos-vehicules/c4-2.jpg  photos-vehicules/c4-3.jpg  photos-vehicules/c4-4.jpg'),
+
+
+    ('Opel Corsa',
+     25000,
+     2020,
+     15000,
+     'photos-vehicules/corsa-1.jpg',
+     '6 Haut parleurs, Appel d''Urgence Localisé, Appel d''Assistance Localisé, Commandes du système audio au volant, Ecran tactile, Fonction MP3, Prise USB, Kit mains-libres Bluetooth, Interface Media',
+     'Arrêt et redémarrage auto. du moteur, Aide au démarrage en côte, Allumage des phares automatique, Follow me home, Capteur de pluie, Limiteur de vitesse, Mode de conduite, Régulateur de vitesse adaptatif, Commande du comportement dynamique',
+     '1.2 Turbo',
+     'Essence',
+     '100 ch / 74 kW',
+     'Manuelle',
+     'photos-vehicules/corsa-2.jpg photos-vehicules/corsa-3.jpg photos-vehicules/corsa-4.jpg'),
+
+
+    ('Dacia Spring',
+     19000,
+     2021,
+     16000,
+     'photos-vehicules/spring-1.jpg',
+     '2 Haut parleurs, Appel d''Urgence Localisé, Kit mains-libres Bluetooth, Radio numérique DAB, Ecran tactile, Fonction MP3, Prise USB, Kit mains-libres Bluetooth, Interface Media',
+     'Capteur de luminosité, Commande Mode ECO, Démarrage sans clé, Limiteur de vitesse, Follow me home, Prise USB, Mode de conduite, Régulateur de vitesse adaptatif, Commande du comportement dynamique',
+     'Electrique',
+     'Electrique',
+     '45 ch / 33 kW',
+     'Automatique',
+     'photos-vehicules/spring-2.jpg  photos-vehicules/spring-3.jpg  photos-vehicules/spring-4.jpg'),
+
+      ('Dacia Duster',
+     20000,
+     2020,
+     20500,
+     'photos-vehicules/duster-1.jpg',
+     'Commandes du système audio au volant, Kit mains-libres Bluetooth, Pré-équipement Radio, Fonction MP3, Prise Jack, Radio, Prise USB',
+     'Aide au démarrage en côte, Arrêt et redémarrage auto. du moteur, Système de récupération énergie freinage, Capteur de luminosité, Commande Mode ECO,Limiteur de vitesse, Régulateur de vitesse, Système de récupération énergie freinage',
+     'TCe 100',
+     'Essence',
+     '100 ch / 74 kW',
+     'Manuelle',
+     'photos-vehicules/duster-2.jpg  photos-vehicules/duster-3.jpg  photos-vehicules/duster-4.jpg'),
+
+      ('Dacia Sandero',
+     25000,
+     2021,
+     19000,
+     'photos-vehicules/sandero-1.jpg',
+     '4 Haut parleurs, Appel d''Urgence Localisé, Ecran tactile, Interface Media, Kit mains-libres Bluetooth, Radio numérique DAB, Prise USB',
+     'Aide au démarrage en côte, Arrêt et redémarrage auto. du moteur, Système de récupération énergie freinage, Capteur de pluie, Limiteur de vitesse, Régulateur de vitesse','TCe90',
+     'Essence',
+     '90 ch / 67 kW',
+     'Manuelle',
+     'photos-vehicules/sandero-2.jpg photos-vehicules/sandero-3.jpg  photos-vehicules/sandero-4.jpg'),
+
+     ('Dacia Logan',
+     8000,
+     2022,
+     20000,
+     'photos-vehicules/logan-1.jpg',
+     'Commandes du système audio au volant, Kit mains-libres Bluetooth, Prise auxiliaire de connexion audio, Prise Jack, Prise USB, Radio',
+     'Aide au démarrage en côte, Arrêt et redémarrage auto. du moteur, Commande Mode ECO, Système de récupération énergie freinage',
+      'TCe90',
+     'Essence',
+     '90 ch / 66 kW',
+     'Manuelle',
+     'photos-vehicules/logan-2.jpg  photos-vehicules/logan-3.jpg  photos-vehicules/logan-4.jpg'),
+
+     ('Alpha Romeo',
+     25000,
+     2021,
+     33000,
+     'photos-vehicules/alpharomeo-1.jpg',
+     'Commandes du système audio au volant, 6 Haut parleurs, Commandes vocales, Ecran tactile, GPS Cartographique, Interface Media, Kit mains-libres Bluetooth, Radio numérique DAB, Services connectés',
+     'Arrêt et redémarrage auto. du moteur, Commande du comportement dynamique, Guidage pour manoeuvre de stationnement, Palettes changement vitesses au volant, Capteur de luminosité, Capteur de pluie, Démarrage sans clé, Limiteur de vitesse, Régulateur de vite',
+      '1.5 mHEV 130',
+     'Essence',
+     '131 ch / 96 kW',
+     'Manuelle',
+     'photos-vehicules/alpharomeo-2.jpg  photos-vehicules/alpharomeo-3.jpg  photos-vehicules/alpharomeo-4.jpg')
+;
+
+

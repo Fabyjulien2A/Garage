@@ -27,13 +27,13 @@ Assurez-vous d'avoir les éléments suivants installés sur votre machine :
 - Exportez le schéma de la base de données à partir de votre application ou créez des migrations SQL si vous en utilisez.
 
 6. Démarrez votre serveur web et accédez à l'application dans votre navigateur.
-L'application devrait maintenant être accessible localement à l'adresse http://localhost:3000/Page-Accueil/accueil.php ou http://localhost:3306/Page-Accueil/accueil.php sur certains navigateurs.
+L'application devrait maintenant être accessible localement à l'adresse http://localhost:3306/Page-Accueil/accueil.php .
 
 ## Création d'un Administrateur
 
 Pour créer un administrateur pour le back-office de l'application, suivez ces étapes :
 
-1. Accédez à l'interface de votre application en local à: http://localhost:3000/Administrateur/connexion.php
+1. Accédez à l'interface de votre application en local à: http://localhost:3306/Administrateur/connexion.php
 
 2. Vous devrez vous connecter en tant qu'administrateur. Par défaut, utilisez les identifiants suivants :
 - Nom d'utilisateur : `Parrot.v@gmail.com`
@@ -51,7 +51,7 @@ Maintenant, vous avez créé un administrateur pour le back-office de l'applicat
 
 Pour créer un employé pour le back-office de l'application, suivez ces étapes :
 
-1. Accédez à l'interface de votre application en local à: http://localhost:3000/Administrateur/connexion.php
+1. Accédez à l'interface de votre application en local à: http://localhost:3306/Administrateur/connexion.php
 
 2. Vous devrez vous connecter en tant qu'administrateur en utilisant les identifiants suivants :
 - Nom d'utilisateur : `Parrot.v@gmail.com`
@@ -73,7 +73,7 @@ Maintenant, vous avez créé un employé pour le back-office de l'application we
 
 Pour créer un modérateur pour le back-office de l'application, suivez ces étapes :
 
-1. Accédez à l'interface de votre application en local à: http://localhost:3000/Administrateur/connexion.php
+1. Accédez à l'interface de votre application en local à: http://localhost:3306/Administrateur/connexion.php
 
 2. Vous devrez vous connecter en tant qu'administrateur en utilisant les identifiants suivants :
 - Nom d'utilisateur : `Parrot.v@gmail.com`
