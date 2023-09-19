@@ -44,7 +44,7 @@ if (isset($_POST['connexion'])) {
     <div class="container-fluid">
         <div>
             <form method="post" action="">
-                <h2>Connexion Employés/Administrateur</h2>
+                <h2>Connexion</h2>
                 <div class="mb-3">
                     <input type="email" class="form-control" name="email" placeholder="Votre adresse email" required autocomplete="off">
                 </div>
