@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 carte.appendChild(bouton);
 
                 bouton.addEventListener('click', function () {
-                    afficherDetails(i); // Envoyer l'index au lieu de l'ID
+                    afficherDetails(i); 
                 });
 
                 container.appendChild(carte);
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function afficherDetails(index) {
         const modalContainer = document.querySelector('.modal-container'); // Obtenir l'élément modal-container
     
-        modalContainer.innerHTML = ''; // Effacer le contenu précédent de la modale
+        modalContainer.innerHTML = ''; // Efface le contenu précédent de la modale
         const modalContent = document.createElement('div');
         modalContent.classList.add('modal-content');
          
