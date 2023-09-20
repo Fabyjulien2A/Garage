@@ -44,6 +44,10 @@ create table users
         unique (email)
 );
 
+Requete SQL creation administrateur :
+INSERT INTO users (id, nom, prenom, poste, email, mdp, role, statut)
+VALUES (1, 'Parrot', 'Vincent', 'Gérant', 'parrot.v@gmail.com', SHA1('admin1234'), 'administrateur', '');
+
 
 create table demandes_informations
 (
