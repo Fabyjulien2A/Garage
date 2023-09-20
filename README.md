@@ -121,11 +121,10 @@ En tant que modérateur, vous avez accès à la fonction suivante :
 
 - Afficher et supprimer un commentaire laissé par les clients : Vous êtes le seul à pouvoir gérer les commentaires laissés par les clients via le formulaire.
 
-## Utilisation de l'Application par un Utilisateur (Client)
+## Utilisation de l'Application par un visiteur
+En tant que visiteur de l'application, vous avez les fonctionnalités suivantes à votre disposition :
 
-En tant qu'utilisateur de l'application, vous avez les fonctionnalités suivantes à votre disposition :
-
-- Laisser un commentaire depuis la page d'accueil : Vous pouvez laisser un commentaire ou un avis sur l'application directement depuis la page d'accueil. Votre commentaire sera pris en compte et pourra être visible pour d'autres utilisateurs.
+- Laisser un commentaire depuis la page d'accueil : Vous pouvez laisser un commentaire ou un avis sur l'application directement depuis la page d'accueil. Votre commentaire sera pris en compte et pourra être visible pour d'autres visiteurs.
 
 - Voir les informations de réparations : Vous pouvez consulter les informations sur les services de réparation disponibles depuis la page d'accueil. Cette section vous permettra de mieux comprendre les services proposés par l'entreprise.
 
