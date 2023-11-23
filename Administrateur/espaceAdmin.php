@@ -4,7 +4,6 @@ if (!$_SESSION['mdp']){
     header('location: connexion.php');
 }
 
-
 ?>
 
 <!doctype html>
