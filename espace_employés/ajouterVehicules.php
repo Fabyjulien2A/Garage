@@ -1,10 +1,19 @@
 <?php
 session_start();
-if (!$_SESSION['mdp']){
-header('location: ../Administrateur/connexion.php');
+if (!isset($_SESSION['mdp'])){
+    header('location: ../Administrateur/connexion.php');
 }
 
+// Générer un nouveau jeton CSRF si la session n'en a pas déjà un
+if (!isset($_SESSION['csrf_token'])) {
+    $token = bin2hex(random_bytes(32));
+    $_SESSION['csrf_token'] = $token;
+} else {
+    $token = $_SESSION['csrf_token'];
+}
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,24 +66,35 @@ header('location: ../Administrateur/connexion.php');
             </div>
 
             <div class="mb-3">
-                <label for="energy">Energie :</label>
-                <input type="text" class="form-control" name="energie" id="energy" required>
+               <label for="energie">Energie:</label>
+               <select class="form-select" name="energie" id="energie" required>
+               <option value="essence">Essence</option>
+               <option value="diesel">Diesel</option>
+               <option value="electrique">Electrique</option>
+               <option value="hybride">Hybride</option>
+               </select>
             </div>
 
             <div class="mb-3">
-                <label for="power">Puissance :</label>
+                <label for="power">Puissance (cv) :</label>
                 <input type="text" class="form-control" name="puissance" id="power" required>
             </div>
 
             <div class="mb-3">
-                <label for="transmission">Transmission:</label>
-                <input type="text" class="form-control" name="transmission" id="transmission" required>
+               <label for="transmission">Transmission:</label>
+               <select class="form-select" name="transmission" id="transmission" required>
+               <option value="automatique">Automatique</option>
+               <option value="manuelle">Manuelle</option>
+               </select>
             </div>
 
             <div class="mb-3">
                 <label for="photos_galerie">Photos de la galerie:</label>
                 <input type="file" class="form-control" name="photos_galerie[]" accept="image/*" multiple>
             </div>
+
+             <!--CSRF -->
+             <input type="hidden" name="csrf_token" value="<?php echo $token; ?>">
 
             <button type="submit" class="btn btn-primary">Ajouter</button>
         </form>

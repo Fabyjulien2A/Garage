@@ -60,14 +60,9 @@ if (isset($_POST['supprimer'])) {
                     <option value="22">Dacia Sandero</option>
                     <option value="23">Dacia Logan</option>
                     <option value="24">Alpha Romeo</option>
-                    <option value="25">Véhicule 25</option>
-                    <option value="26">Véhicule 26</option>
-                    <option value="27">Véhicule 27</option>
-                    <option value="28">Véhicule 28</option>
-                    <option value="29">Véhicule 29</option>
-                    <option value="30">Véhicule 30</option>
+                    <option value="25">peugetot</option>
+               
             
-                   
                 </select>
             </div>
             <button type="submit" name="supprimer" class="btn btn-danger btn-block mt-3">Supprimer</button>
