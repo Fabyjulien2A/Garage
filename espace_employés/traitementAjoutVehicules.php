@@ -15,7 +15,7 @@ if (!isset($_SESSION['csrf_token'])) {
 
 // Vérifier le jeton CSRF
 if (empty($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
-    // Jeton invalide, rediriger vers une page d'erreur
+    
     header('Location: erreur.php');
     exit();
 }
@@ -32,7 +32,7 @@ $energie = filter_input(INPUT_POST, 'energie', FILTER_SANITIZE_STRING);
 $puissance = filter_input(INPUT_POST, 'puissance', FILTER_SANITIZE_STRING);
 $transmission = filter_input(INPUT_POST, 'transmission', FILTER_SANITIZE_STRING);
 
-// Vérifier la validité des données
+// Vérification de la validité des données
 if (
     empty($modele) || 
     $kilometrage === false ||
