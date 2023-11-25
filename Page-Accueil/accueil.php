@@ -1,5 +1,5 @@
 <?php
-    // Récupérez l'état actuel du garage depuis la base de données
+    // Récupération de l'état actuel du garage depuis la base de données
     $dsn = 'mysql:host=mysql-fabyjulien.alwaysdata.net;dbname=fabyjulien_ecf_garage';
     $username = '319891_faby';
     $password = 'alwaysdatastudi';
