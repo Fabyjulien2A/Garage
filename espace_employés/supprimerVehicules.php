@@ -18,6 +18,9 @@ if (isset($_POST['supprimer'])) {
     header('location: ../espace_employés/traitementSuppression.php');
     exit;
 }
+
+// Récupération de la liste des véhicules depuis la base de données
+$listeVehicules = $bdd->query("SELECT id, modele FROM vehicules")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -35,34 +38,9 @@ if (isset($_POST['supprimer'])) {
             <div class="form-group">
                 <label for="vehicule">Sélectionnez le véhicule à supprimer :</label>
                 <select id="vehicule" name="vehicule" class="form-control">
-                    <option value="0">Véhicule 0</option>
-                    <option value="1">Peugeot 2008</option>
-                    <option value="2">Peugeot 208</option>
-                    <option value="3">Peugeot 208 Bleu</option>
-                    <option value="4">Peugeot 3008</option>
-                    <option value="5">Volkswagen Polo</option>
-                    <option value="6">Volkswagen Golf</option>
-                    <option value="7">Volkswagen Aerton</option>
-                    <option value="8">Volkswagen Procab</option>
-                    <option value="9">Volkswagen ID-5</option>
-                    <option value="10">Ford Fiesta</option>
-                    <option value="11">Ford Kuga</option>
-                    <option value="12">Ford Focus</option>
-                    <option value="13">Ford Puma</option>
-                    <option value="14">Ford Ranger</option>
-                    <option value="15">Bmw serie 3</option>
-                    <option value="16">Bmw X2</option>
-                    <option value="17">Citroen c-3</option>
-                    <option value="18">Citroen c-4</option>
-                    <option value="19">Opel Corsa</option>
-                    <option value="20">Dacia Spring</option>
-                    <option value="21">Dacia Duster</option>
-                    <option value="22">Dacia Sandero</option>
-                    <option value="23">Dacia Logan</option>
-                    <option value="24">Alpha Romeo</option>
-                    <option value="25">peugetot</option>
-               
-            
+                    <?php foreach ($listeVehicules as $vehicule): ?>
+                        <option value="<?= $vehicule['id'] ?>"><?= $vehicule['modele'] ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
             <button type="submit" name="supprimer" class="btn btn-danger btn-block mt-3">Supprimer</button>

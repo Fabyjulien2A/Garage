@@ -3,6 +3,13 @@ session_start();
 if (!$_SESSION['mdp']){
 header('location: ../Administrateur/connexion.php');
 }
+// Affiche le message de confirmation s'il est présent dans la session
+if (isset($_SESSION['message_confirmation'])) {
+    echo '<div class="alert alert-success mt-4" role="alert">' . $_SESSION['message_confirmation'] . '</div>';
+
+    // Supprime le message de confirmation de la session après l'avoir affiché
+    unset($_SESSION['message_confirmation']);
+}
 
 ?>
 
