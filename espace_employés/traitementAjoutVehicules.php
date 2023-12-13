@@ -104,12 +104,16 @@ try {
     $stmt->bindParam(":photos_galerie", $galleryPhotoPathsString);
     $stmt->execute();
 
-    echo "Le véhicule a été ajouté avec succès.";
+    $_SESSION['message_confirmation_add'] = "Le véhicule a été ajouté avec succès.";
+    
+
 
 } catch (PDOException $e) {
     echo "Erreur lors de l'ajout du véhicule : " . $e->getMessage();
 } finally {
     $pdo = null;
 }
+// Redirection de l'utilisateur vers la page de confirmation 
+header('location: ../espace_employés/espaceEmployes.php');
+exit;
 ?>
-<a href="../espace_employés/espaceEmployes.php" class="btn btn-primary btn-block mt-3">Retour espace employés</a>

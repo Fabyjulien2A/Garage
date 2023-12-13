@@ -4,12 +4,30 @@ if (!$_SESSION['mdp']){
 header('location: ../Administrateur/connexion.php');
 }
 // Affiche le message de confirmation s'il est présent dans la session
-if (isset($_SESSION['message_confirmation'])) {
-    echo '<div class="alert alert-success mt-4" role="alert">' . $_SESSION['message_confirmation'] . '</div>';
+if (isset($_SESSION['message_confirmation_delete'])) {
+    echo '<div class="alert alert-success mt-4" role="alert">' . $_SESSION['message_confirmation_delete'] . '</div>';
 
     // Supprime le message de confirmation de la session après l'avoir affiché
-    unset($_SESSION['message_confirmation']);
+    unset($_SESSION['message_confirmation_delete']);
 }
+
+if (isset($_SESSION['message_confirmation_add'])) {
+    echo '<div class="alert alert-success mt-4" role="alert">' . $_SESSION['message_confirmation_add'] . '</div>';
+
+    // Supprime le message de confirmation de la session après l'avoir affiché
+    unset($_SESSION['message_confirmation_add']);
+}
+
+// Affiche le message d'erreur s'il est présent dans la session
+if (isset($_SESSION['message_erreur'])) {
+    echo '<div class="alert alert-danger mt-4" role="alert">' . $_SESSION['message_erreur'] . '</div>';
+
+    // Supprime le message d'erreur de la session après l'avoir affiché
+    unset($_SESSION['message_erreur']);
+}
+
+
+
 
 ?>
 
@@ -40,8 +58,3 @@ if (isset($_SESSION['message_confirmation'])) {
     <script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
-
-
-

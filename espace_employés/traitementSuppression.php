@@ -15,7 +15,7 @@ if (isset($_POST['supprimer'])) {
     $supprimerVehicule->execute(array($vehiculeId));
 
     // Stocke le message de confirmation dans la session
-    $_SESSION['message_confirmation'] = "Le véhicule a été supprimé avec succès.";
+    $_SESSION['message_confirmation_delete'] = "Le véhicule a été supprimé avec succès.";
 
     // Redirection de l'utilisateur vers la page de confirmation 
     header('location: ../espace_employés/espaceEmployes.php');
