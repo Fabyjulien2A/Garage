@@ -15,7 +15,7 @@ if (!$_SESSION['mdp']){
     <link rel="stylesheet" href="../css/bootstrap.css">
     <title>Espace administrateur</title>
 </head>
-<body>
+<body class="body-admin">
     <div class="container-fluid">
     <h1 class="text-center mt-4">Espace administrateur</h1>
         <div class="row justify-content-center">
