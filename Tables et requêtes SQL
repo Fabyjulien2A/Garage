@@ -78,6 +78,19 @@ create table garage
     etat varchar(255) not null
 );
 
+create table horaires
+(
+    id       int auto_increment
+        primary key,
+    lundi    varchar(255) null,
+    mardi    varchar(255) null,
+    mercredi varchar(255) null,
+    jeudi    varchar(255) null,
+    vendredi varchar(255) null,
+    samedi   varchar(255) null,
+    dimanche varchar(255) null
+);
+
 create table services_reparations
 (
     id  int auto_increment
