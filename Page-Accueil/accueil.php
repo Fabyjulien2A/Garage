@@ -1,5 +1,5 @@
 <?php
-    // Récupération de l'état actuel du garage depuis la base de données
+    // Récupération de l'état actuel du garage et des horaires depuis la base de données
     $dsn = 'mysql:host=mysql-fabyjulien.alwaysdata.net;dbname=fabyjulien_ecf_garage';
     $username = '319891_faby';
     $password = 'alwaysdatastudi';
@@ -8,6 +8,7 @@
         $connexion = new PDO($dsn, $username, $password);
         $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+        // Récupération de l'état du garage
         $query = $connexion->query("SELECT etat FROM garage");
         $result = $query->fetch(PDO::FETCH_ASSOC);
 
@@ -16,10 +17,23 @@
         } else {
             echo "L'état du garage n'est pas disponible.";
         }
+
+        // Récupération des horaires du garage
+        $queryHoraires = $connexion->query("SELECT lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche FROM horaires");
+        $resultHoraires = $queryHoraires->fetch(PDO::FETCH_ASSOC);
+
+        if ($resultHoraires) {
+            $horaires = $resultHoraires;
+        } else {
+            echo "Les horaires ne sont pas disponibles.";
+        }
     } catch (PDOException $e) {
         echo "Erreur : " . $e->getMessage();
+    } finally {
+        // Fermer la connexion dans le bloc finally
+        $connexion = null;
     }
-    ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -152,14 +166,14 @@
             <div class="col-sm-6 col-md-6  bg-warning">
                 <h2 class="horaires">HORAIRES:</h2>
                 <ul>
-                    <li> LUNDI : 08h45-12h00 et 14h00-18h00</li>
-                    <li>MARDI : 08h45-12h00 et 14h00-18h00</li>
-                    <li>MERCREDI : 08h45-12h00 et 14h00-18h00</li>
-                    <li>JEUDI : 08h45-12h00 et 14h00-18h00</li>
-                    <li>VENDREDI : 08h45-12h00 et 14h00-18h00</li>
-                    <li>SAMEDI : 08h45-12h00</li>
-                    <li>DIMANCHE : Fermé</li>
-                </ul>   
+                <li>LUNDI : <?php echo isset( $resultHoraires['lundi']) ?  $resultHoraires['lundi'] : 'Non disponible'; ?></li>
+                <li>MARDI : <?php echo isset( $resultHoraires['mardi']) ?  $resultHoraires['mardi'] : 'Non disponible'; ?></li>
+                <li>MERCREDI : <?php echo isset( $resultHoraires['mercredi']) ?  $resultHoraires['mercredi'] : 'Non disponible'; ?></li>
+                <li>JEUDI : <?php echo isset( $resultHoraires['jeudi']) ?  $resultHoraires['jeudi'] : 'Non disponible'; ?></li>
+                <li>VENDREDI : <?php echo isset( $resultHoraires['vendredi']) ?   $resultHoraires['vendredi'] : 'Non disponible'; ?></li>
+                <li>SAMEDI : <?php echo isset( $resultHoraires['samedi']) ?  $resultHoraires['samedi'] : 'Non disponible'; ?></li>
+                <li>DIMANCHE : <?php echo isset( $resultHoraires['dimanche']) ?  $resultHoraires['dimanche'] : 'Non disponible'; ?></li>
+            </ul>
                 <p class="etat-garage"><?php echo $etatGarage; ?></p>   
             </div>   
 

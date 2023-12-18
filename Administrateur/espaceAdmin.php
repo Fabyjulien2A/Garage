@@ -24,6 +24,7 @@ if (!$_SESSION['mdp']){
                 <a href="supprimerServiceReparation.php" class="btn btn-primary btn-block mb-3">Supprimer un service de réparation</a>
                 <a href="../contact/recupInfosFormulaire.php" class="btn btn-primary btn-block mb-3">Afficher demandes clients</a>
                 <a href="inscriptions.php" class="btn btn-primary btn-block mb-3">Inscription Administrateur/Employé/Moderateur</a>
+                <a href="../Page-Accueil\formulaireFooter.php" class="btn btn-primary btn-block mb-3">Modifier horaires du garage</a>
             </div>
         </div>
 
