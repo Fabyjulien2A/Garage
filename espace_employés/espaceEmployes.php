@@ -37,10 +37,10 @@ if (isset($_SESSION['message_erreur'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/espaceEmployes.css">
+    <link rel="stylesheet" href="../css/admin-employes-moderateur.css">
     <title>Espace employés</title>
 </head>
-<body>
+<body class="body-employés">
     <div class="container">
         <h1 class="text-center mt-4">Espace employés</h1>
 

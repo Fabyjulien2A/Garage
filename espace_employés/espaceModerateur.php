@@ -2,10 +2,9 @@
 session_start();
 
 if (!isset($_SESSION['email']) || !isset($_SESSION['mdp'])) {
-    header('location: ../Administrateur/connexion.php');
+   header('location: ../Administrateur/connexion.php');
     exit();
 }
-
 // Vérifiez si l'utilisateur est un modérateur
 if ($_SESSION['role'] !== 'moderateur') {
     // redirection vers page connexion si l'utilisateur n'est pas un moderateur
@@ -22,10 +21,10 @@ $bdd = new PDO('mysql:host=mysql-fabyjulien.alwaysdata.net;dbname=fabyjulien_ecf
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="espaceEmployes.css">
-    <title>Espace employés</title>
+    <link rel="stylesheet" href="../css/admin-employes-moderateur.css">
+    <title>Espace moderateur</title>
 </head>
-<body>
+<body class="body-moderateur">
     <div class="container">
         <h1 class="text-center mt-4">Espace Moderateur</h1>
 
