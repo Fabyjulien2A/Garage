@@ -1,0 +1,28 @@
+
+.list-group {
+    padding: 20px;
+    margin: 20px;
+}
+
+
+.list-group-item {
+    background-color: #f8f9fa; /* Couleur de fond */
+    color: #495057; /* Couleur du texte */
+    border: 1px solid #dee2e6; /* Bordure */
+    border-radius: 8px; /* Bordures arrondies */
+    margin-bottom: 10px; /* Marge en bas entre les éléments */
+}
+
+
+.list-group-item:hover {
+    background-color: #e2e6ea;
+    cursor: pointer;
+}
+
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.5rem;
+    color: #007bff; /* Couleur bleue accentuée */
+}
