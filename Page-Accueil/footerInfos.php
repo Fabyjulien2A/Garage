@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Connexion à la base de données
 $dsn = 'mysql:host=mysql-fabyjulien.alwaysdata.net;dbname=fabyjulien_ecf_garage';
 $username = '319891_faby';
@@ -39,7 +40,8 @@ try {
     // Exécution de la requête
     $stmt->execute(); 
 
-    
+    $_SESSION['message_confirmation_add_time'] = "Les horaires ont été modifiées avec succès.";
+
 } catch (PDOException $e) {
     echo "Erreur : " . $e->getMessage();
 } finally {

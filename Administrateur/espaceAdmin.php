@@ -4,6 +4,21 @@ if (!$_SESSION['mdp']){
     header('location: connexion.php');
 }
 
+if (isset($_SESSION['message_confirmation_add_time'])) {
+    echo '<div class="alert alert-success mt-4" role="alert">' . $_SESSION['message_confirmation_add_time'] . '</div>';
+
+    // Supprime le message de confirmation de la session après l'avoir affiché
+    unset($_SESSION['message_confirmation_add_time']);
+}
+
+
+// Affiche le message d'erreur s'il est présent dans la session
+if (isset($_SESSION['message_erreur'])) {
+    echo '<div class="alert alert-danger mt-4" role="alert">' . $_SESSION['message_erreur'] . '</div>';
+
+    // Supprime le message d'erreur de la session après l'avoir affiché
+    unset($_SESSION['message_erreur']);
+}
 
 
 
