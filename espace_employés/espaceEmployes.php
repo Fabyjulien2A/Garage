@@ -18,6 +18,7 @@ if (isset($_SESSION['message_confirmation_add'])) {
     unset($_SESSION['message_confirmation_add']);
 }
 
+
 // Affiche le message d'erreur s'il est présent dans la session
 if (isset($_SESSION['message_erreur'])) {
     echo '<div class="alert alert-danger mt-4" role="alert">' . $_SESSION['message_erreur'] . '</div>';

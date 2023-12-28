@@ -37,13 +37,14 @@ try {
     $stmt->bindParam(':dimanche', $sunday);
 
     // Exécution de la requête
-    $stmt->execute();
+    $stmt->execute(); 
 
-    echo "Nouveaux horaires ajoutés avec succès!";
+    echo "Les horaires ont bien été modifiées!";
 } catch (PDOException $e) {
     echo "Erreur : " . $e->getMessage();
 } finally {
     // Fermer la connexion
     $connexion = null;
 }
+
 ?>
