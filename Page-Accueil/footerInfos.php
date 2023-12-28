@@ -39,12 +39,14 @@ try {
     // Exécution de la requête
     $stmt->execute(); 
 
-    echo "Les horaires ont bien été modifiées!";
+    
 } catch (PDOException $e) {
     echo "Erreur : " . $e->getMessage();
 } finally {
     // Fermer la connexion
     $connexion = null;
 }
-
+// Redirection de l'utilisateur vers la page de confirmation 
+header('location: ../Administrateur/espaceAdmin.php');
+exit;
 ?>
