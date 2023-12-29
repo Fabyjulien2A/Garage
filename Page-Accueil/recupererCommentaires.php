@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/recupCommentaires.css">
+    <title>Document</title>
+</head>
+<body>
+    
 <?php
 $dsn = 'mysql:host=mysql-fabyjulien.alwaysdata.net;dbname=fabyjulien_ecf_garage';
 $username = '319891_faby';
@@ -15,15 +25,18 @@ $resultat = $connexion->query($requete);
 
 //Récuperation commentaires
 while ($row = $resultat->fetch(PDO::FETCH_ASSOC)) {
+    echo '<div class="commentaire">';
     echo "Nom : " . $row['nom'] . "<br>";
     
     echo "Commentaire : " . $row['commentaire'] . "<br>";
     
-    echo "Note : " . $row['note'] . "<br><br>" ;
+    echo "Note : " . $row['note'] . "<br>";
     
+    echo '</div>';
 }
-
-
 
 $connexion = null; 
 ?>
+
+</body>
+</html>
