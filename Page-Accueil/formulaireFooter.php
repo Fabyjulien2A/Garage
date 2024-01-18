@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/admin-employes-moderateur.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <title>Formulaire Admin</title>
 </head>
-<body>
+<body id="body-horaire">
     <div class="container-fluid text-center">
         <h2>Modifications des horaires</h2>
         <br>

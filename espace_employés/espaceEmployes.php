@@ -41,10 +41,10 @@ if (isset($_SESSION['message_erreur'])) {
     <link rel="stylesheet" href="../css/admin-employes-moderateur.css">
     <title>Espace employés</title>
 </head>
-<body class="body-employés">
+<body id="body-employés">
     <div class="container">
         <h1 class="text-center mt-4">Espace employés</h1>
-
+        <br>
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <a href="publierCommentaire.php" class="btn btn-primary btn-block mb-3">Publier un commentaire</a>

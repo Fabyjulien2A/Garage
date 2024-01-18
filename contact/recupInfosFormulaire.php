@@ -28,9 +28,10 @@ function getDemandes($sujet) {
 <html>
 <head>
     <title>Liste des demandes</title>
+    <link rel="stylesheet" href="../css/admin-employes-moderateur.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
-<body>
+<body id="body-infos-formulaire">
     <div class="container-fluid">
         <h1 class="display-4">Liste des demandes</h1>
         <h2>Demandes de support technique :</h2>

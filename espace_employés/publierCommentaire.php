@@ -25,10 +25,11 @@ if (isset($_POST['envoi'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/admin-employes-moderateur.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <title>Commentaires clients</title>
 </head>
-<body>
+<body id="body-commentaire">
     <div class="container-fluid text-center">
         <h1>Publier commentaire</h1>
         <form method="POST" action="publierCommentaire.php" class="mt-4">

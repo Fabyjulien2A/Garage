@@ -28,10 +28,11 @@ $listeVehicules = $bdd->query("SELECT id, modele FROM vehicules")->fetchAll(PDO:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/admin-employes-moderateur.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <title>Supprimer un véhicule</title>
 </head>
-<body>
+<body id="body-supprimer-vehicule">
     <div class="container">
         <h1 class="text-center mt-4">Supprimer un véhicule</h1>
         <form method="POST" action="traitementSuppression.php" class="mt-4">

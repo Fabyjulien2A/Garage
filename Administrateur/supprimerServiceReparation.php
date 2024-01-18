@@ -30,9 +30,10 @@ $repairServices = $query->fetchAll(PDO::FETCH_ASSOC);
 <html>
 <head>
     <title>Supprimer un service de réparation</title>
+    <link rel="stylesheet" href="../css/admin-employes-moderateur.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
-<body>
+<body id="body-suppression">
     <div class="container-fluid text-center">
         <h1 class="mt-5">Supprimer un service de réparation</h1>
         <form method="POST" action="">

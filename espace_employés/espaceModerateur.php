@@ -27,10 +27,12 @@ $bdd = new PDO('mysql:host=mysql-fabyjulien.alwaysdata.net;dbname=fabyjulien_ecf
 <body class="body-moderateur">
     <div class="container">
         <h1 class="text-center mt-4">Espace Moderateur</h1>
-
+        <br>
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <a href="commentaires.php" class="btn btn-primary btn-block mb-3">Afficher tous les commentaires</a>
+                <a href="ajouterVehicules.php" class="btn btn-primary btn-block mb-3">Ajouter un nouveau véhicule</a>
+                <a href="publierCommentaire.php" class="btn btn-primary btn-block mb-3">Publier un commentaire</a>
                 <a href="../Administrateur/deconnexionEspaces.php" class="btn btn-danger btn-block mb-3">Déconnexion</a>  
             </div>
         </div>

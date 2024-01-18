@@ -18,10 +18,11 @@ if (!isset($_SESSION['csrf_token'])) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/admin-employes-moderateur.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <title>Ajouter un véhicule</title>
 </head>
-<body>
+<body id="body-ajouter-vehicule">
     <div class="container-fluid">
         <h1 class="text-center">Ajouter un véhicule</h1>
         <form action="traitementAjoutVehicules.php" method="POST" enctype="multipart/form-data">
