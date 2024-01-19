@@ -50,11 +50,13 @@ if (isset($_SESSION['message_erreur'])) {
                 <a href="publierCommentaire.php" class="btn btn-primary btn-block mb-3">Publier un commentaire</a>
                 <a href="ajouterVehicules.php" class="btn btn-primary btn-block mb-3">Ajouter un nouveau véhicule</a>
                 <a href="supprimerVehicules.php" class="btn btn-primary btn-block mb-3">Supprimer un véhicule</a>
-                <a href="../contact/recupInfosFormulaire.php" class="btn btn-primary btn-block mb-3">Afficher demandes clients</a>
+                <a href="../contact/recupInfosFormulaire.php" class="btn btn-primary btn-block mb-3">Afficher demandes clients</a><br>
                 <a href="../Administrateur/deconnexionEspaces.php" class="btn btn-danger btn-block mb-3">Déconnexion</a>
             </div>
         </div>
     </div>
+
+
 
     <script src="../js/bootstrap.bundle.min.js"></script>
 </body>
