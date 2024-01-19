@@ -25,6 +25,9 @@ header {
 
 }
 
+.modal-fade{
+    background-color: red;
+}
 
 ul{
     align-items: stretch;
