@@ -17,7 +17,7 @@ try {
 }
 
 //Requête SQL en fonction des paramètres de filtrage
-$requete = "SELECT photos, annee, energie, prix, kilometrage FROM vehicules WHERE 1";
+$requete = "SELECT modele, photos, annee, energie, kilometrage, prix FROM vehicules WHERE 1";
 
 $bindings = [];
 
