@@ -1,48 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
-
     const modalContainer = document.createElement('div');
     modalContainer.classList.add('modal-container');
     document.body.appendChild(modalContainer);
 
     const container = document.getElementById("cartes-container");
+    let originalData; // Garder une copie des données d'origine
 
     // Requête XMLHttpRequest pour récupérer les données des véhicules
     const xhr = new XMLHttpRequest();
     xhr.open("GET", "recupInfoCar.php", true);
     xhr.onload = function () {
         if (xhr.status === 200) {
-            const data = JSON.parse(xhr.responseText);
-
-            data.forEach((item, i) => {
-                const carte = document.createElement("div");
-                carte.classList.add("carte");
-
-                const image = document.createElement("img");
-                image.src = item.photos;
-                carte.appendChild(image);
-
-                const titre = document.createElement("h3");
-                titre.textContent = item.modele;
-                carte.appendChild(titre);
-
-                const description = document.createElement("p");
-                description.innerHTML = `
-                    Année : ${item.annee}<br>
-                    Énergie : ${item.energie}<br>
-                    Kilométrage : ${item.kilometrage} km<br>
-                    Prix : ${item.prix} €`;
-                carte.appendChild(description);
-
-                const bouton = document.createElement("button");
-                bouton.textContent = "Détails";
-                carte.appendChild(bouton);
-
-                bouton.addEventListener('click', function () {
-                    afficherDetails(i);
-                });
-
-                container.appendChild(carte);
-            });
+            originalData = JSON.parse(xhr.responseText);
+            updateCards(originalData);
         } else {
             console.error("Erreur lors de la récupération des données des voitures");
         }
@@ -50,12 +20,13 @@ document.addEventListener("DOMContentLoaded", function () {
     xhr.send();
 
     // Fonction pour afficher les détails du véhicule en tant que modale
-    function afficherDetails(index) {
+    function afficherDetails(index, filteredData) {
         const modalContainer = document.querySelector('.modal-container');
-
         modalContainer.innerHTML = '';
         const modalContent = document.createElement('div');
         modalContent.classList.add('modal-content');
+
+        const item = filteredData[index];
 
         // Nouvelle requête XMLHttpRequest pour récupérer les détails du véhicule
         const modalXHR = new XMLHttpRequest();
@@ -114,7 +85,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Filtre véhicules
-    // Écouteurs d'événements pour les éléments de filtrage
     const yearFilter = document.getElementById("year-filter");
     const priceFilter = document.getElementById("price-filter");
     const mileageFilter = document.getElementById("mileage-filter");
@@ -126,24 +96,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const filterButton = document.getElementById("filter-button");
     filterButton.addEventListener("click", applyFilters);
 
-    // Fonction pour appliquer les filtres
     function applyFilters() {
         const selectedYear = yearFilter.value;
         const selectedPrice = priceFilter.value;
         const selectedMileage = mileageFilter.value;
 
-        // Effectuer la requête XMLHttpRequest avec les paramètres de filtrage
-        const filteredXHR = new XMLHttpRequest();
         const url = `filtre.php?year=${selectedYear}&price=${selectedPrice}&mileage=${selectedMileage}`;
 
+        const filteredXHR = new XMLHttpRequest();
         filteredXHR.open("GET", url, true);
         filteredXHR.onload = function () {
             if (filteredXHR.status === 200) {
                 const filteredData = JSON.parse(filteredXHR.responseText);
-
-                // Mettre à jour l'affichage avec les données filtrées
                 updateCards(filteredData);
-
             } else {
                 console.error("Erreur lors de la récupération des données filtrées");
             }
@@ -155,22 +120,20 @@ document.addEventListener("DOMContentLoaded", function () {
     // Fonction pour mettre à jour les cartes
     function updateCards(data) {
         const cartesContainer = document.getElementById("cartes-container");
-        // Effacer le contenu actuel
         cartesContainer.innerHTML = "";
-
-        // Boucle à travers les données filtrées et créer les éléments de carte correspondants
+    
         data.forEach((item, i) => {
             const carte = document.createElement("div");
             carte.classList.add("carte");
-
+    
             const image = document.createElement("img");
             image.src = item.photos;
             carte.appendChild(image);
-
+    
             const titre = document.createElement("h3");
             titre.textContent = item.modele;
             carte.appendChild(titre);
-
+    
             const description = document.createElement("p");
             description.innerHTML = `
                 Année : ${item.annee}<br>
@@ -178,18 +141,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 Kilométrage : ${item.kilometrage} km<br>
                 Prix : ${item.prix} €`;
             carte.appendChild(description);
-
-            // Créer le bouton "Détails"
+    
             const detailsButton = document.createElement("button");
             detailsButton.textContent = "Détails";
             detailsButton.addEventListener("click", function () {
-                // Logique pour gérer le clic sur le bouton "Détails"
-                console.log("Détails clicked for item:", item);
-                afficherDetails(i);
+                // Utilisez le bon index avec les données filtrées
+                const index = originalData.findIndex(originalItem => originalItem.modele === item.modele);
+                afficherDetails(index, originalData);
             });
             carte.appendChild(detailsButton);
-
-            // Ajouter la carte au conteneur
+    
             cartesContainer.appendChild(carte);
         });
     }

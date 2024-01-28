@@ -9,7 +9,7 @@ try {
     $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Requête pour récupérer les données des véhicules
-    $requete = "SELECT modele, photos, annee, energie, kilometrage, prix FROM vehicules;";
+    $requete = "SELECT id, modele, photos, annee, energie, kilometrage, prix FROM vehicules;";
     $resultat = $connexion->query($requete);
     $data = $resultat->fetchAll(PDO::FETCH_ASSOC);
 

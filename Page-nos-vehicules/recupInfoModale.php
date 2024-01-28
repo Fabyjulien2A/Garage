@@ -14,7 +14,7 @@ try {
         $index = intval($_GET['index']); 
 
         // Requête SQL pour récupérer les données du véhicule en fonction de l'index
-        $requete = "SELECT photos_galerie, equipements, equipements_conduite, nom_du_moteur, puissance, transmission FROM vehicules LIMIT 1 OFFSET :index";
+        $requete = "SELECT id, photos_galerie, equipements, equipements_conduite, nom_du_moteur, puissance, transmission FROM vehicules LIMIT 1 OFFSET :index";
         $statement = $connexion->prepare($requete);
         $statement->bindParam(':index', $index, PDO::PARAM_INT);
         $statement->execute();
