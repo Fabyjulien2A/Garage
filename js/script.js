@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(modalContainer);
 
     const container = document.getElementById("cartes-container");
-    let originalData; // Garder une copie des données d'origine
+    let originalData; // Garde une copie des données d'origine
 
     // Requête XMLHttpRequest pour récupérer les données des véhicules
     const xhr = new XMLHttpRequest();
