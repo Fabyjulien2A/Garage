@@ -28,10 +28,11 @@ if (isset($_POST['envoyer'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/admin-employes-moderateur.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <title>Contactez-nous</title>
 </head>
-<body>
+<body id="body-contact">
     <main>
         <div class="container">
             <h1 class="text-center mt-4">Contactez-nous</h1>
@@ -64,6 +65,7 @@ if (isset($_POST['envoyer'])){
                     <label for="message">Message :</label>
                     <textarea id="message" name="message" class="form-control" required></textarea>
                 </div>
+                <br>
                 <button type="submit" class="btn btn-primary">Envoyer</button>
             </form>
             <a href="../Page-nos-vehicules/nosVehicules.php" class="btn btn-primary btn-block mt-3">Retour site</a>
