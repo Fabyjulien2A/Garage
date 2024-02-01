@@ -12,10 +12,10 @@ if (isset($_POST['envoi'])) {
     $firstname = htmlspecialchars($_POST['prenom']);
     $job = htmlspecialchars($_POST['poste']);
     $email = htmlspecialchars($_POST['email']);
-    $mdp = hash('sha256', $_POST['mdp']); // Utilisation de SHA-256 pour le hachage du mot de passe
+    $mdp = hash('sha256', $_POST['mdp']);
     $role = htmlspecialchars($_POST['role']);
 
-    $errors = array(); // Tableau pour stocker les erreurs
+    $errors = array(); 
 
     if (empty($name)) {
         $errors[] = "Le champ Nom est vide.";
@@ -68,7 +68,6 @@ if (isset($_POST['envoi'])) {
     }
 }
 ?>
-<!-- Ajoutez ici le reste de votre code HTML pour la page inscription.php -->
 
 
 <!DOCTYPE html>

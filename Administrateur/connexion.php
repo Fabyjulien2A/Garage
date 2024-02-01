@@ -13,14 +13,13 @@ if (isset($_POST['connexion'])) {
         if ($recupUser->rowCount() > 0) {
             $utilisateur = $recupUser->fetch();
 
-            // Utilisation de password_verify pour vérifier le mot de passe
             if (hash('sha256', $password) === $utilisateur['mdp']) {
                 $_SESSION['email'] = $email;
                 $_SESSION['mdp'] = $utilisateur['mdp'];
                 $_SESSION['id'] = $utilisateur['id'];
                 $_SESSION['role'] = $utilisateur['role'];
 
-                // Permettre la connexion en tant que modérateur
+                
                 if ($utilisateur['role'] == 'moderateur') {
                     header('location: ../espace_employés/espaceModerateur.php');
                 } elseif ($utilisateur['role'] == 'employé') {
@@ -39,8 +38,6 @@ if (isset($_POST['connexion'])) {
     }
 }
 ?>
-<!-- Ajoutez ici le reste de votre code HTML pour la page connexion.php -->
-
 
 
 

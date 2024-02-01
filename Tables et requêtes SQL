@@ -14,6 +14,12 @@ create table avis_clients
 create index user_id
     on avis_clients (user_id);
 
+
+
+Requete SQL creation administrateur :
+INSERT INTO users (nom, prenom, poste, email, mdp, role, statut)
+VALUES ('Parrot', 'Vincent', 'Gérant', 'parrot.v@gmail.com', SHA2('admin1234', 256), 'administrateur', '');
+
 Requêtes SQL :
 
 INSERT INTO avis_clients (nom, commentaire, note, user_id)
@@ -44,9 +50,7 @@ create table users
         unique (email)
 );
 
-Requete SQL creation administrateur :
-INSERT INTO users (nom, prenom, poste, email, mdp, role, statut)
-VALUES ('Parrot', 'Vincent', 'Gérant', 'parrot.v@gmail.com', SHA2('admin1234', 256), 'administrateur', '');
+
 
 
 create table demandes_informations
