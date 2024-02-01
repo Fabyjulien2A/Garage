@@ -49,6 +49,9 @@ if (isset($_POST['envoi'])){
         </form>
         <a href="../Page-Accueil/accueil.php" class="btn btn-primary btn-block mt-3">Retour site</a>
     </div>
+    <style>
+        
+    </style>
 </body>
 </html>
 
