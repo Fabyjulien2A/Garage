@@ -48,8 +48,10 @@ Pour créer cet administrateur initial, suivez les étapes ci-dessous :
 3. **Exécutez la requête SQL suivante :** La requête SQL ci-dessous insère un nouvel administrateur avec des identifiants par défaut dans la table "users". Vous pouvez exécuter cette requête pour créer l'administrateur initial.
 
    ```sql
+  
    INSERT INTO users (nom, prenom, poste, email, mdp, role, statut)
-   VALUES ('Parrot', 'Vincent', 'Gérant', 'parrot.v@gmail.com', SHA1('admin1234'), 'administrateur', '');
+   VALUES ('Parrot', 'Vincent', 'Gérant', 'parrot.v@gmail.com', SHA2('admin1234', 256), 'administrateur', '');
+
 
 (Vous pouvez également créer un administrateur directement depuis l'espace administrateur dans la partie 
 "Inscription administrateur/employés/moderateur" en definissant "administrateur" dans l'input "role" ).
@@ -101,7 +103,7 @@ Maintenant, vous avez créé un modérateur pour le back-office de l'application
 
 **Note : Un modérateur est déjà inscrit sur le site avec les informations de connexion suivantes :**
 - Adresse email : benichousarah@gmail.com
-- Mot de passe : benichou123
+- Mot de passe : 123456
 
 ## Utilisation des Fonctions du Site
 

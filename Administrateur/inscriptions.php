@@ -1,8 +1,10 @@
 <?php
 session_start();
-if (!$_SESSION['mdp']){
+
+if (!$_SESSION['mdp']) {
     header('location: connexion.php');
 }
+
 $bdd = new PDO('mysql:host=mysql-fabyjulien.alwaysdata.net;dbname=fabyjulien_ecf_garage', '319891_faby', 'alwaysdatastudi');
 
 if (isset($_POST['envoi'])) {
@@ -10,7 +12,7 @@ if (isset($_POST['envoi'])) {
     $firstname = htmlspecialchars($_POST['prenom']);
     $job = htmlspecialchars($_POST['poste']);
     $email = htmlspecialchars($_POST['email']);
-    $mdp = sha1($_POST['mdp']);
+    $mdp = hash('sha256', $_POST['mdp']); // Utilisation de SHA-256 pour le hachage du mot de passe
     $role = htmlspecialchars($_POST['role']);
 
     $errors = array(); // Tableau pour stocker les erreurs
@@ -66,6 +68,9 @@ if (isset($_POST['envoi'])) {
     }
 }
 ?>
+<!-- Ajoutez ici le reste de votre code HTML pour la page inscription.php -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

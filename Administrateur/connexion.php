@@ -1,36 +1,48 @@
 <?php
 session_start();
 $bdd = new PDO('mysql:host=mysql-fabyjulien.alwaysdata.net;dbname=fabyjulien_ecf_garage', '319891_faby', 'alwaysdatastudi');
+
 if (isset($_POST['connexion'])) {
     if (!empty($_POST['email']) && !empty($_POST['mdp'])) {
         $email = htmlspecialchars($_POST['email']);
-        $mdp = sha1($_POST['mdp']);
-        $recupUser = $bdd->prepare('SELECT * FROM users WHERE email = ? AND mdp = ?');
-        $recupUser->execute(array($email, $mdp));
+        $password = $_POST['mdp'];
+
+        $recupUser = $bdd->prepare('SELECT * FROM users WHERE email = ?');
+        $recupUser->execute([$email]);
 
         if ($recupUser->rowCount() > 0) {
             $utilisateur = $recupUser->fetch();
-            $_SESSION['email'] = $email;
-            $_SESSION['mdp'] = $mdp;
-            $_SESSION['id'] = $utilisateur['id'];
-            $_SESSION['role'] = $utilisateur['role'];
 
-            // Permettre la connexion en tant que modérateur
-            if ($utilisateur['role'] == 'moderateur') {
-                header('location: ../espace_employés/espaceModerateur.php');
-            } elseif ($utilisateur['role'] == 'employé') {
-                header('location: ../espace_employés/espaceEmployes.php');
-            } elseif ($utilisateur['role'] == 'administrateur') {
-                header('location: espaceAdmin.php');
+            // Utilisation de password_verify pour vérifier le mot de passe
+            if (hash('sha256', $password) === $utilisateur['mdp']) {
+                $_SESSION['email'] = $email;
+                $_SESSION['mdp'] = $utilisateur['mdp'];
+                $_SESSION['id'] = $utilisateur['id'];
+                $_SESSION['role'] = $utilisateur['role'];
+
+                // Permettre la connexion en tant que modérateur
+                if ($utilisateur['role'] == 'moderateur') {
+                    header('location: ../espace_employés/espaceModerateur.php');
+                } elseif ($utilisateur['role'] == 'employé') {
+                    header('location: ../espace_employés/espaceEmployes.php');
+                } elseif ($utilisateur['role'] == 'administrateur') {
+                    header('location: espaceAdmin.php');
+                }
+            } else {
+                $error = "Mot de passe incorrect.";
             }
         } else {
-            $error = "Votre email ou mot de passe est incorrect.";
+            $error = "Adresse email non trouvée.";
         }
     } else {
         $error = "Veuillez remplir tous les champs.";
     }
 }
 ?>
+<!-- Ajoutez ici le reste de votre code HTML pour la page connexion.php -->
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
