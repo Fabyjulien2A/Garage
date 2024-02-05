@@ -2,6 +2,13 @@
 session_start();
 $bdd = new PDO('mysql:host=mysql-fabyjulien.alwaysdata.net;dbname=fabyjulien_ecf_garage', '319891_faby', 'alwaysdatastudi');
 
+if (!isset($_SESSION['csrf_token'])) {
+    $token = bin2hex(random_bytes(32));
+    $_SESSION['csrf_token'] = $token;
+} else {
+    $token = $_SESSION['csrf_token'];
+}
+
 
 if (isset($_POST['envoyer'])){
     if (!empty($_POST['nom']) AND !empty($_POST['prenom']) AND !empty($_POST['email']) AND !empty($_POST['telephone']) AND !empty($_POST['sujet']) AND !empty($_POST['message']) ) {
@@ -66,6 +73,8 @@ if (isset($_POST['envoyer'])){
                     <textarea id="message" name="message" class="form-control" required></textarea>
                 </div>
                 <br>
+                <!-- CSRF -->
+                <input type="hidden" name="csrf_token" value="<?php echo $token; ?>">
                 <button type="submit" class="btn btn-primary">Envoyer</button>
             </form>
             <a href="../Page-nos-vehicules/nosVehicules.php" class="btn btn-primary btn-block mt-3">Retour site</a>

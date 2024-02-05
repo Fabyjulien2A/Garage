@@ -4,7 +4,7 @@ if (!isset($_SESSION['mdp'])){
     header('location: ../Administrateur/connexion.php');
 }
 
-// Générer un nouveau jeton CSRF si la session n'en a pas déjà un
+// Génére un nouveau jeton CSRF si la session n'en a pas déjà un
 if (!isset($_SESSION['csrf_token'])) {
     $token = bin2hex(random_bytes(32));
     $_SESSION['csrf_token'] = $token;
