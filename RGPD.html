@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/mentionslegales.css">
+    <title>Politique de confidentialité</title>
+</head>
+<body>
+    <h1>Politique de confidentialité</h1>
+    
+    <h2>Protection des données</h2>
+    <p>Nous prenons des mesures de sécurité pour protéger vos données personnelles...</p>
+    
+    <h2>Sécurité des Requêtes</h2>
+    <p>La sécurité des requêtes a été une priorité absolue lors du développement du site...</p>
+    <ul>
+        <li>Validation Rigoureuse des Données : Toutes les données entrantes sont soumises à une validation rigoureuse...</li>
+        <li>Prévention des Attaques d'Injection : Nous utilisons largement des requêtes SQL préparées...</li>
+        <li>Utilisation de htmlspecialchars : La fonction htmlspecialchars a été intégrée...</li>
+        <li>Hachage : Toutes les données sensibles sont traitées avec l'algorithme de hachage SHA-256...</li>
+        <li>Protection CSRF : Nous avons mis en place une protection CSRF en générant des jetons CSRF uniques...</li>
+    </ul>
+    
+
+    <h2>Gestion de l'Authentification et de la Session Utilisateur</h2>
+    <p>Dans le cadre de la conception de cette application, une approche spécifique a été adoptée pour gérer l'authentification et la session utilisateur sans recourir à l'utilisation de JSON Web Tokens (JWT) ni de cookies.</p>
+    <p>L'authentification des utilisateurs est réalisée en vérifiant les informations d'identification fournies par l'utilisateur par rapport à celles stockées de manière sécurisée dans la base de données.</p>
+    <p>La gestion de la session utilisateur n'implique pas l'utilisation de cookies spécifiques. Les informations de session peuvent être transmises de manière sécurisée entre les différentes pages de l'application sans avoir besoin de stocker des données sensibles côté client.</p>
+    
+    <h2>Gestion de la Sécurité des Données Employés et du Gérant</h2>
+    <p>L'approche adoptée pour la gestion de l'authentification et de la session utilisateur a été délibérément conçue pour renforcer la sécurité des données, en particulier celles des employés et du gérant.</p>
+    <ul>
+        <li><strong>Absence de Stockage Sensible Côté Client :</strong> L’application évite de stocker des données sensibles côté client, réduisant ainsi les risques liés à la manipulation ou à la compromission de ces données.</li>
+        <li><strong>Renforcement de la Confidentialité des Données :</strong> En évitant l'utilisation de cookies, cela renforce la confidentialité des données des employés et du gérant, réduisant les risques associés à la divulgation non autorisée d'informations.</li>
+    </ul>
+</body>
+</html>
