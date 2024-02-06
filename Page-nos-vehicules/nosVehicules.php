@@ -164,7 +164,7 @@
                     </svg>
                     TÉLÉPHONE : 09 52 45 18 75 
                     <br><br>
-                    <a href="../MentionsLegales.html" target="_blank">Mentions Légales</a> | <a href="../RGPD.html" target="_blank">Politique de confidentialité</a>
+                    <a href="../MentionsLegales/MentionsLegales.html" target="_blank">Mentions Légales</a> | <a href="../MentionsLegales/RGPD.html" target="_blank">Politique de confidentialité</a>
             </div>
                 </P>
             </div>
