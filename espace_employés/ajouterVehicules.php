@@ -15,7 +15,7 @@ if (!isset($_SESSION['csrf_token'])) {
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/admin-employes-moderateur.css">

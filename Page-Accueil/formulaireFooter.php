@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez les services professionnels de vente et de réparation automobile de Vincent Parrot !">
     <link rel="stylesheet" href="../css/admin-employes-moderateur.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <title>Formulaire Admin</title>
