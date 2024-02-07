@@ -50,7 +50,7 @@ Pour créer cet administrateur initial, suivez les étapes ci-dessous :
    ```sql
   
    INSERT INTO users (nom, prenom, poste, email, mdp, role, statut)
-   VALUES ('Parrot', 'Vincent', 'Gérant', 'parrot.v@gmail.com', SHA2('admin1234', 256), 'administrateur', '');
+   VALUES ('Parrot', 'Vincent', 'Gérant', 'parrot.v75@gmail.com', SHA2('admin1234', 256), 'administrateur', '');
 
 
 (Vous pouvez également créer un administrateur directement depuis l'espace administrateur dans la partie 
@@ -68,7 +68,7 @@ Pour créer un employé pour le back-office de l'application, suivez ces étapes
 1. Accédez à l'interface de votre application en local à: http://localhost:3306/Administrateur/connexion.php
 
 2. Vous devrez vous connecter en tant qu'administrateur en utilisant les identifiants suivants :
-- Nom d'utilisateur : Parrot.v@gmail.com
+- Nom d'utilisateur : Parrot.v75@gmail.com
 - Mot de passe : admin1234
 
 3. Une fois connecté, accédez à la section "Inscription administrateur/employés/moderateur".
@@ -90,7 +90,7 @@ Pour créer un modérateur pour le back-office de l'application, suivez ces éta
 1. Accédez à l'interface de votre application en local à: http://localhost:3306/Administrateur/connexion.php
 
 2. Vous devrez vous connecter en tant qu'administrateur en utilisant les identifiants suivants :
-- Nom d'utilisateur : Parrot.v@gmail.com
+- Nom d'utilisateur : Parrot.v75@gmail.com
 - Mot de passe : admin1234
 
 3. Une fois connecté, accédez à la section "Inscription administrateur/employés/moderateur".

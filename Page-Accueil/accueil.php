@@ -196,13 +196,14 @@
                     </svg>
                     TÉLÉPHONE : 09 52 45 18 75 
                     <br><br>
-                    <a href="../MentionsLegales/MentionsLegales.html" target="_blank">Mentions Légales</a> | <a href="../MentionsLegales/RGPD.html" target="_blank">Politique de confidentialité</a>
-            </div>
+                    <a href="../contact/formulaireContact.php">Formulaire de contact</a>
                 </P>
+            
+                
             </div>
             
         </div>
-    <p class="copyright">Garage V.parrot Copyright 2023 </p>
+    <p class="copyright">Garage V.parrot Copyright 2023    <a href="../MentionsLegales/MentionsLegales.html" target="_blank">Mentions Légales</a> | <a href="../MentionsLegales/RGPD.html" target="_blank">Politique de confidentialité</a></p>
     </footer>
 
  
