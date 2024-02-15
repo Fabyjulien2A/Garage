@@ -139,8 +139,6 @@ foreach ($demandesSupport as $demande) {
             ?>
         </ul>
 
-        <a href="../Administrateur/espaceAdmin.php" class="btn btn-primary mt-3">Retour espace administrateur</a>
-        <a href="../espace_employés/espaceEmployes.php" class="btn btn-primary mt-3">Retour espace employés</a>
     </div>
 </body>
 </html>
