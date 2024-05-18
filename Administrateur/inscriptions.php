@@ -15,7 +15,7 @@ if (isset($_POST['envoi'])) {
     $mdp = hash('sha256', $_POST['mdp']);
     $role = htmlspecialchars($_POST['role']);
 
-    $errors = array(); 
+    $errors = array();
 
     if (empty($name)) {
         $errors[] = "Le champ Nom est vide.";
@@ -72,6 +72,7 @@ if (isset($_POST['envoi'])) {
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -79,6 +80,7 @@ if (isset($_POST['envoi'])) {
     <link rel="stylesheet" href="../css/bootstrap.css">
     <title>Inscription administrateur/employés/moderateur</title>
 </head>
+
 <body id="body-inscription">
     <div class="container-fluid text-center">
         <h1 class="mt-5">Inscription utilisateur</h1>
@@ -106,9 +108,9 @@ if (isset($_POST['envoi'])) {
             <div class="mb-3">
                 <label for="role" class="form-label">Rôle :</label>
                 <select class="form-control text-center" name="role" id="role" required>
-                <option value="administrateur">Administrateur</option>
-                <option value="employé">Employé</option>
-                <option value="moderateur">Moderateur</option>
+                    <option value="administrateur">Administrateur</option>
+                    <option value="employé">Employé</option>
+                    <option value="moderateur">Moderateur</option>
                 </select>
             </div>
             <button type="submit" class="btn btn-primary" name="envoi">Envoyer</button>
@@ -116,4 +118,5 @@ if (isset($_POST['envoi'])) {
         <a href="../Administrateur/espaceAdmin.php" class="btn btn-secondary mt-3">Retour espace administrateur</a>
     </div>
 </body>
+
 </html>
