@@ -66,6 +66,10 @@ try {
                 <a class="nav-link px-2 outline-primary me-2" href="../Page-nos-vehicules/nosVehicules.php">NOS
                     VEHICULES</a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link px-2 outline-primary me-2" href="../contact/formulaireContact.php">NOUS CONTACTER</a>
+            </li>
         </ul>
         <div class="col-md-3 text-end">
             <a href="../Administrateur/connexion.php">
